@@ -22,14 +22,14 @@
           <br><label><strong>Username:</strong></label> {{ currentMC.username}}
           <hr>
           <br><label><strong>Mission Stack:</strong></label> {{ currentMC.mainStack}}
-          <br><label><strong>Current Enrollment:</strong></label> {{ currentMC.currentEnrollment}}
-          <br><label><strong>Azure Certification:</strong></label> {{ currentMC.hasAzureCertification}}
+          <br><label><strong>Current Enrollment:</strong></label> <span v-if="currentMC.currentEnrollment">Sí</span><span v-else>No</span>
+          <br><label><strong>Azure Certification:</strong></label> <span v-if="currentMC.hasAzureCertification">Sí</span><span v-else>No</span>
         </div>
         <router-link :to="'/mc/' + currentMC.id" class="btn btn-info"> Editar</router-link>
       </div>
       <div v-else>
         <br />
-        <p> Selecciona un explorer.</p>
+        <p> Selecciona un MissionCommander.</p>
       </div>
     </div>
   </div>
