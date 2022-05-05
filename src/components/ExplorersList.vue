@@ -33,7 +33,6 @@
 </template>
 <script>
 
-import TutorialDataService from "../services/TutorialDataService";
 import ExplorerService from "../services/ExplorerService";
 
 export default {
@@ -59,29 +58,9 @@ export default {
           console.log(e);
         });
     },
-    refreshList() {
-      this.retrieveTutorials();
-      this.currentTutorial = null;
-      this.currentIndex = -1;
-    },
-    setActiveTutorial(tutorial, index) {
-      this.currentTutorial = tutorial;
-      this.currentIndex = tutorial ? index : -1;
-    },
     setActiveExplorer(explorer, index) {
       this.currentExplorer= explorer;
       this.currentIndex = explorer? index : -1;
-    },
-    searchTitle() {
-      TutorialDataService.findByTitle(this.title)
-        .then(response => {
-          this.tutorials = response.data;
-          this.setActiveTutorial(null);
-          console.log(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
     }
   },
   mounted() {
