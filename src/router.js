@@ -15,7 +15,22 @@ const routes =  [
     path: "/add",
     name: "add-explorer",
     component: () => import("./components/AddExplorer")
-  }
+  },
+  {
+    path: "/mc",
+    name: "mc-all",
+    component: () => import("./components/MCList")
+  },
+  {
+    path: "/mc/:id",
+    name: "mc-details",
+    component: () => import("./components/MC")
+  },
+  {
+    path: "/mc/add",
+    name: "add-MC",
+    component: () => import("./components/AddMC")
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),
