@@ -16,13 +16,16 @@
     </div>
     <div class="col-md-6">
       <div v-if="currentMC">
-        <h4>Explorer</h4>
+        <h4>Details</h4>
         <div>
           <br><label><strong>Nombre:</strong></label> {{ currentMC.name}}
           <br><label><strong>Username:</strong></label> {{ currentMC.username}}
-          <br><label><strong>Mission:</strong></label> {{ currentMC.mission}}
+          <hr>
+          <br><label><strong>Mission Stack:</strong></label> {{ currentMC.mainStack}}
+          <br><label><strong>Current Enrollment:</strong></label> {{ currentMC.currentEnrollment}}
+          <br><label><strong>Azure Certification:</strong></label> {{ currentMC.hasAzureCertification}}
         </div>
-        <router-link :to="'/explorer/' + currentMC.id" class="btn btn-info"> Editar</router-link>
+        <router-link :to="'/mc/' + currentMC.id" class="btn btn-info"> Editar</router-link>
       </div>
       <div v-else>
         <br />

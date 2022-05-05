@@ -21,6 +21,11 @@ const routes =  [
     name: "mc-all",
     component: () => import("./components/MCList")
   },
+  {
+    path: "/mc/:id",
+    name: "mc-details",
+    component: () => import("./components/MC")
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),
