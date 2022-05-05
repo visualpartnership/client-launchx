@@ -15,7 +15,12 @@ const routes =  [
     path: "/add",
     name: "add-explorer",
     component: () => import("./components/AddExplorer")
-  }
+  },
+  {
+    path: "/mc",
+    name: "mc-all",
+    component: () => import("./components/MCList")
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),
