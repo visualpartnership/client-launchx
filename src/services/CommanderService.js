@@ -2,19 +2,19 @@ import http from "../http-common";
 
 class CommanderService {
   getAll() {
-    return http.get("/missioncommander");
+    return http.get("/commanders");
   }
   get(id) {
-    return http.get(`/missioncommander/${id}`);
+    return http.get(`/commanders/${id}`);
   }
   create(data) {
-    return http.post("/missioncommander", data);
+    return http.post("/commanders", data);
   }
   update(id, data) {
-    return http.put(`/missioncommander/${id}`, data);
+    return http.put(`/commanders/${id}`, data);
   }
   delete(id) {
-    return http.delete(`/missioncommander/${id}`);
+    return http.delete(`/commanders/${id}`);
   }
 }
 

@@ -11,6 +11,7 @@
         >
           {{ explorer.username }}
         </li>
+
       </ul>
     </div>
     <div class="col-md-6">
