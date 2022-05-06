@@ -26,7 +26,7 @@
       </div>
       <div v-else>
         <br />
-        <p> Selecciona un explorer.</p>
+        <p> Selecciona un explorer</p>
       </div>
     </div>
   </div>

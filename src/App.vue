@@ -10,10 +10,10 @@
           <router-link to="/commanders" class="nav-link">Commanders</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/addExplorer" class="nav-link">Agregar Explorer</router-link>
+          <router-link to="/addExplorer" class="nav-link">New Explorer</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/addCommander" class="nav-link">Agregar Commander</router-link>
+          <router-link to="/addCommander" class="nav-link">New Commander</router-link>
         </li>
       </div>
     </nav>

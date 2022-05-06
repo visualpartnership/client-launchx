@@ -1,70 +1,74 @@
 <template>
   <div class="list row">
     <div class="col-md-6">
-      <h4> Commanders Inscritos </h4>
+      <h4> Commander Inscritos </h4>
       <ul class="list-group">
         <li class="list-group-item"
           :class="{ active: index == currentIndex }"
-          v-for="(explorer, index) in explorers"
+          v-for="(commander, index) in commanders"
           :key="index"
-          @click="setActiveExplorer(explorer, index)"
+          @click="setActiveCommander(commander, index)"
         >
-          {{ explorer.username }}
+          {{ commander.username }}
         </li>
 
       </ul>
     </div>
     <div class="col-md-6">
-      <div v-if="currentExplorer">
-        <h4>Explorer</h4>
+      <div v-if="currentCommander">
+        <h4>Commander</h4>
         <div>
-          <br><label><strong>Nombre:</strong></label> {{ currentExplorer.name}}
-          <br><label><strong>Username:</strong></label> {{ currentExplorer.username}}
-          <br><label><strong>Mission:</strong></label> {{ currentExplorer.mission}}
+          <br><label><strong>Nombre:</strong></label> {{ currentCommander.name}}
+          <br><label><strong>Username:</strong></label> {{ currentCommander.username}}
+          <br><label><strong>Main Stack:</strong></label> {{ currentCommander.mainStack}}
+          <br><label><strong>Current Enrollment:</strong></label > {{ currentCommander.currentEnrollment}}
+          <br><label><strong>Azure Certification:</strong></label> {{ currentCommander.hasAzureCertification}}
         </div>
-        <router-link :to="'/explorer/' + currentExplorer.id" class="btn btn-info"> Editar</router-link>
+        <router-link :to="'/commander/' + currentCommander.id" class="btn btn-info"> Editar</router-link>
       </div>
       <div v-else>
         <br />
-        <p> Selecciona un Commander.</p>
+        <p> Selecciona un commander</p>
       </div>
     </div>
   </div>
 </template>
 <script>
-/*
+
 import CommanderService from "../services/CommanderService";
 
 export default {
-  name: "commanders-list",
+  name: "explorer-list",
   data() {
     return {
       tutorials: [],
-      explorers: [],
+      commanders: [],
       currentTutorial: null,
-      currentExplorer: null,
+      currentCommander: null,
       currentIndex: -1,
       title: "",
-      explorerId: ""
+      commanderId: ""
     };
   },
   methods: {
-    getAllExplorers(){
+    getAllCommanders(){
       CommanderService.getAll()
         .then(response => {
-          this.explorers = response.data;
+          this.commanders = response.data;
         })
         .catch(e => {
           console.log(e);
         });
     },
-    setActiveExplorer(explorer, index) {
-      this.currentExplorer= explorer;
-      this.currentIndex = explorer? index : -1;
-    }
+    setActiveCommander(commander, index) {
+      this.currentCommander= commander;
+      this.currentIndex = commander? index : -1;
+      
+    },
+    
   },
   mounted() {
-    this.getAllExplorers();
+    this.getAllCommanders();
   }
-};*/
+};
 </script>
