@@ -7,6 +7,9 @@
           <router-link to="/explorers" class="nav-link">Explorers</router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/commanders" class="nav-link">Commanders</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/add" class="nav-link">Agregar Explorer</router-link>
         </li>
       </div>
@@ -23,7 +26,6 @@ export default {
 </script>
 <style>
 .banner0{
-
   background: linear-gradient(80deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 35%, rgb(0, 42, 90) 100%);
 }
 .onTitle{
