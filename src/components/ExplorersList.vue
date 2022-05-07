@@ -59,7 +59,7 @@ export default {
         });
     },
     setActiveExplorer(explorer, index) {
-      this.currentExplorer= explorer;
+      this.currentExplorer = explorer;
       this.currentIndex = explorer? index : -1;
     }
   },

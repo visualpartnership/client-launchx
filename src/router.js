@@ -18,6 +18,11 @@ const routes =  [
     component: () => import("./components/Explorer")
   },
   {
+    path: "/commander/:id",
+    name: "commander-details",
+    component: () => import("./components/Commander")
+  },
+  {
     path: "/addExplorer",
     name: "add-explorer",
     component: () => import("./components/AddExplorer")

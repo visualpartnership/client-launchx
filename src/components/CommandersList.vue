@@ -61,7 +61,7 @@ export default {
         });
     },
     setActiveCommander(commander, index) {
-      this.currentCommander= commander;
+      this.currentCommander = commander;
       this.currentIndex = commander? index : -1;
       
     },
