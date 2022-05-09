@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6">
       <div v-if="currentExplorer">
-        <h4>Explorer</h4>
+        <h4>Explorerssss</h4>
         <div>
           <br><label><strong>Nombre:</strong></label> {{ currentExplorer.name}}
           <br><label><strong>Username:</strong></label> {{ currentExplorer.username}}
