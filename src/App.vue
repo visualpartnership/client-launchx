@@ -13,10 +13,10 @@
           <b class="nav-link">||</b>
         </li>
         <li class="nav-item">
-          <router-link to="/missionCommander" class="nav-link">MissionCommander</router-link>
+          <router-link to="/missioncommander" class="nav-link">MissionCommander</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/addM" class="nav-link">Agregar MissionCommander</router-link>
+          <router-link to="/addm" class="nav-link">Agregar MissionCommander</router-link>
         </li>
       </div>
     </nav>
