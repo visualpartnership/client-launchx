@@ -35,9 +35,9 @@
   </div>
 </template>
 <script>
-import ExplorerService from "../services/ExplorerService";
+import ExplorerService from "../services/missionCommander";
 export default {
-  name: "explorer",
+  name: "missioncommander",
   data() {
     return {
       currentExplorer: null,
