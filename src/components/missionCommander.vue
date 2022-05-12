@@ -1,71 +1,71 @@
 <template>
-<h4>Explorer</h4>
-  <div v-if="currentExplorer" class="edit-form">
+<h4>MissionCommander</h4>
+  <div v-if="currentMissionCommander" class="edit-form">
     <form>
       <div class="form-group">
         <label for="title">Nombre</label>
         <input type="text" disabled class="form-control" id="title"
-          v-model="currentExplorer.name"
+          v-model="currentMissionCommander.name"
         />
       </div>
       <div class="form-group">
         <label for="title">Username</label>
         <input type="text" disabled class="form-control" id="title"
-          v-model="currentExplorer.username"
+          v-model="currentMissionCommander.username"
         />
       </div>
       <div class="form-group">
-        <label for="title">Misión</label>
+        <label for="title">MainStack</label>
         <input type="text" class="form-control" id="title"
-          v-model="currentExplorer.mission"
+          v-model="currentMissionCommander.mainStack"
         />
       </div>
     </form>
-    <button class="btn btn-danger mr-2" @click="deleteExplorer">
-      Eliminar Explorer
+    <button class="btn btn-danger mr-2" @click="deleteMissionCommander">
+      Eliminar M.C.
     </button>
-    <button type="submit" class="btn btn-info mr-2" @click="updateExplorer">
+    <button type="submit" class="btn btn-info mr-2" @click="updateMissionCommander">
       Actualizar
     </button>
     <p>{{ message }}</p>
   </div>
   <div v-else>
     <br />
-    <p> Selecciona un explorer. </p>
+    <p> Selecciona un MissionCommander. </p>
   </div>
 </template>
 <script>
-import ExplorerService from "../services/missionCommander";
+import missionCommander from "../services/missionCommander";
 export default {
   name: "missioncommander",
   data() {
     return {
-      currentExplorer: null,
+      currentMissionCommander: null,
       message: ''
     };
   },
   methods: {
-    getExplorer(id) {
-      ExplorerService.get(id)
+    getMissionCommander(id) {
+      missionCommander.get(id)
         .then(response => {
-          this.currentExplorer= response.data;
+          this.currentMissionCommander= response.data;
         })
         .catch(e => {
           console.log(e);
         });
     },
-    deleteExplorer() {
-      ExplorerService.delete(this.currentExplorer.id)
+    deleteMissionCommander() {
+      missionCommander.delete(this.currentMissionCommander.id)
       .then(response => {
         console.log(response.data);
-        this.$router.push({ name: "explorers" });
+        this.$router.push({ name: "missioncomanders" });
       })
       .catch(e => {
           console.log(e);
       });
     },
-    updateExplorer() {
-      ExplorerService.update(this.currentExplorer.id, this.currentExplorer)
+    updateMissionCommander() {
+      missionCommander.update(this.currentMissionCommander.id, this.currentMissionCommander)
         .then(response => {
           console.log(response.data);
           this.message = 'Se actualizó correctamente';
@@ -77,7 +77,7 @@ export default {
   },
   mounted() {
     this.message = '';
-    this.getExplorer(this.$route.params.id);
+    this.getMissionCommander(this.$route.params.id);
   }
 };
 </script>
