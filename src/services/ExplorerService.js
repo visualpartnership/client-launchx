@@ -16,6 +16,21 @@ class ExplorerService {
   delete(id) {
     return http.delete(`/explorers/${id}`);
   }
+  getAllMCommanders() {
+    return http.get("/MissionCommanders");
+  }
+  getMCommanders(id) {
+    return http.get(`/MissionCommanders/${id}`);
+  }
+  createMC(data) {
+    return http.post("/MissionCommanders", data);
+  }
+  updateMC(id, data) {
+    return http.put(`/MissionCommanders/${id}`, data);
+  }
+  deleteMC(id) {
+    return http.delete(`/MissionCommanders/${id}`);
+  }
 }
 
 export default new ExplorerService();
