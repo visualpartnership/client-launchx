@@ -5,24 +5,24 @@
       <ul class="list-group">
         <li class="list-group-item"
           :class="{ active: index == currentIndex }"
-          v-for="(explorer, index) in explorers"
+          v-for="(missioncommander, index) in missioncommanders"
           :key="index"
-          @click="setActiveExplorer(explorer, index)"
+          @click="setActiveMissionCommander(missioncommander, index)"
         >
-          {{ explorer.username }}
+          {{ missioncommander.username }}
         </li>
 
       </ul>
     </div>
     <div class="col-md-6">
-      <div v-if="currentExplorer">
+      <div v-if="currentMissionCommander">
         <h4>MissionCommander</h4>
         <div>
-          <br><label><strong>Nombre:</strong></label> {{ currentExplorer.name}}
-          <br><label><strong>Username:</strong></label> {{ currentExplorer.username}}
-          <br><label><strong>MainStack:</strong></label> {{ currentExplorer.mainStack}}
+          <br><label><strong>Nombre:</strong></label> {{ currentMissionCommander.name}}
+          <br><label><strong>Username:</strong></label> {{ currentMissionCommander.username}}
+          <br><label><strong>MainStack:</strong></label> {{ currentMissionCommander.mainStack}}
         </div>
-        <router-link :to="'/explorer/' + currentExplorer.id" class="btn btn-info"> Editar</router-link>
+        <router-link :to="'/missioncommander/' + currentMissionCommander.id" class="btn btn-info"> Editar</router-link>
       </div>
       <div v-else>
         <br />
@@ -33,14 +33,14 @@
 </template>
 <script>
 
-import ExplorerService from "../services/missionCommander";
+import missionCommander from "../services/missionCommander";
 
 export default {
-  name: "explorer-list",
+  name: "missionCommander-list",
   data() {
     return {
       tutorials: [],
-      explorers: [],
+      missioncommanders: [],
       currentTutorial: null,
       currentExplorer: null,
       currentIndex: -1,
@@ -49,22 +49,22 @@ export default {
     };
   },
   methods: {
-    getAllExplorers(){
-      ExplorerService.getAll()
+    getAllMissionCommanders(){
+      missionCommander.getAll()
         .then(response => {
-          this.explorers = response.data;
+          this.missioncommanders = response.data;
         })
         .catch(e => {
           console.log(e);
         });
     },
-    setActiveExplorer(explorer, index) {
-      this.currentExplorer= explorer;
-      this.currentIndex = explorer? index : -1;
+    setActiveMissionCommander(missioncommander, index) {
+      this.currentMissionCommander= missioncommander;
+      this.currentIndex = missioncommander? index : -1;
     }
   },
   mounted() {
-    this.getAllExplorers();
+    this.getAllMissionCommanders();
   }
 };
 </script>
