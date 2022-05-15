@@ -1,0 +1,158 @@
+#logo{
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translate(-30%,-30%);
+  -webkit-transform: translate(-30%,-30%);
+  -moz-transform: translate(-30%,-30%);
+  -ms-transform: translate(-30%,-30%);
+  -o-transform: translate(-30%,-30%);
+  /*border: dashed 2px white;
+  */
+}
+#back-cover1{
+  background-color:#184e77;
+}
+
+.contenedor{
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor .box{
+  width:100px;
+  height:100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.contenedor .box span{
+  position: absolute;
+  box-sizing: border-box;
+  background: rgba(24, 78, 119, 0.5);
+  /*border:2px solid #184e77;*/
+  border-radius: 50%;
+  animation:animate 5s linear infinite;
+  -webkit-animation:animate 5s linear infinite;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation-delay: calc(-0.3s * var(--i));
+}
+
+@keyframes animate
+{
+
+  0%
+  {
+   width: 0px;
+   height: 0px;
+  }
+  
+
+  50%
+  {
+    opacity: .5;
+  }
+  
+  100%
+  {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+footer .wave{
+  position: absolute;
+  /*top: -100px;*/
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/wave.png);
+  background-size: 1000px 100px;
+}
+footer .wave#wave1{
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 4s linear infinite;
+  -webkit-animation: animateWave 4s linear infinite;
+}
+footer .wave#wave2{
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave-02 4s linear infinite;
+  -webkit-animation: animateWave-02 4s linear infinite;
+}
+footer .wave#wave3{
+  z-index: 1000;
+  opacity: 0.3;
+  bottom: 0;
+  animation: animateWave-03 4s linear infinite;
+  -webkit-animation: animateWave-03 4s linear infinite;
+}
+footer .wave#wave4{
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave-04 4s linear infinite;
+  -webkit-animation: animateWave-04 4s linear infinite;
+}
+
+@keyframes animateWave
+{
+  0%
+  {
+    background-position-x:1000px;
+  }
+  
+  100%
+  {
+    background-position-x:0px;
+  }
+}
+@keyframes animateWave-02
+{
+  0%
+  {
+    background-position-x:0px;
+  }
+  
+  100%
+  {
+    background-position-x:1000px;
+  }
+}
+@keyframes animateWave-03
+{
+  0%
+  {
+    background-position-x:1000px;
+  }
+  
+  100%
+  {
+    background-position-x:0px;
+  }
+}
+@keyframes animateWave-04
+{
+  0%
+  {
+    background-position-x:1000px;
+  }
+  
+  100%
+  {
+    background-position-x:0px;
+  }
+}
+#textwave{
+  z-index: 1000;
+  position: relative;
+}
